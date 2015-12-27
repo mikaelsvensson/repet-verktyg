@@ -12,7 +12,8 @@
     <xsl:template match="src:matrix1_GroupActivityEventId">
         <xsl:variable name="date" select="substring(@GroupActivityEventId, 1, 10)"/>
         <xsl:variable name="time" select="substring(@GroupActivityEventId, 13, 12)"/>
-        <xsl:value-of select="concat($date, ' ', $time)"/>
+        <xsl:variable name="group" select="ancestor::src:list1_Details_Group/@textbox63"/>
+        <xsl:value-of select="concat($date, ' ', $time, ' - ', $group)"/>
         <xsl:text>&#xA;</xsl:text>
         <xsl:for-each select="key('dates', @GroupActivityEventId)[descendant::src:Cell[@Participated = '1']]">
             <xsl:variable name="detailName" select="concat(substring-after(../../@PersonId, ' '), ', ', substring-before(../../@PersonId, ' '))"/>
