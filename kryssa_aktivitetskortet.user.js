@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Kryssa för rätt person på aktivitetskortet
 // @namespace   nackasmu
-// @include     http://aktivitetskort.net.umea.se/*
+// @include     https://aktivitetskort.se/*
 // @version     1
 // ==/UserScript==
 
